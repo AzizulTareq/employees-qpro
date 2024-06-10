@@ -77,6 +77,7 @@ app.get("/api/employees/:id", authenticateJWT, async (req, res) => {
   const hierarchy = await buildHierarchy(id);
   res.json(hierarchy);
 });
+
 app.post("/api/employees", authenticateJWT, async (req, res) => {
   const { name, positionId, positionName, parentId } = req.body;
 

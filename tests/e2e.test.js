@@ -1,11 +1,10 @@
 const request = require("supertest");
-const app = require("../index"); // Ensure your app export the express app
+const app = require("../index");
 
 describe("GET /api/employees/:id", () => {
   let token;
 
   beforeAll(async () => {
-    // Obtain JWT token
     const response = await request(app)
       .post("/api/login")
       .send({ username: "admin", password: "password" });
